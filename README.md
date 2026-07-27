@@ -50,5 +50,5 @@
 
 ### 1. Repository Clone
 ```bash
-git clone [https://github.com/yourusername/manuscript.git](https://github.com/yourusername/manuscript.git)
-cd manuscript
+[git clone [https://github.com/yourusername/manuscript.git](https://github.com/yourusername/manuscript.git)
+cd manuscript](https://github.com/Fanuel-Dev/markdown-editor.git)
