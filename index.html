@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manuscript — Markdown Editor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<button class="sidebar-collapse-btn" id="sidebarToggle">☰</button>
+<div class="app">
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-head"><h2>Manuscript</h2><button class="new-doc-btn" id="newDocBtn" title="New document">+</button></div>
+    <div class="doc-list" id="docList"></div>
+    <div class="sidebar-foot" id="docCount">— documents</div>
+  </div>
+
+  <div class="main">
+    <div class="toolbar">
+      <input type="text" class="title-input" id="titleInput" placeholder="Untitled document">
+      <div class="tb-group">
+        <button class="tb-btn" data-cmd="bold" title="Bold"><b>B</b></button>
+        <button class="tb-btn" data-cmd="italic" title="Italic"><i>i</i></button>
+        <button class="tb-btn" data-cmd="h2" title="Heading">H</button>
+      </div>
+      <div class="tb-group">
+        <button class="tb-btn" data-cmd="link" title="Link">🔗</button>
+        <button class="tb-btn" data-cmd="image" title="Image">🖼</button>
+        <button class="tb-btn" data-cmd="code" title="Inline code">&lt;/&gt;</button>
+      </div>
+      <div class="tb-group">
+        <button class="tb-btn" data-cmd="ul" title="Bulleted list">•—</button>
+        <button class="tb-btn" data-cmd="ol" title="Numbered list">1.</button>
+        <button class="tb-btn" data-cmd="quote" title="Quote">❝</button>
+      </div>
+      <div class="view-toggle" id="viewToggle">
+        <button data-mode="edit">Edit</button>
+        <button data-mode="split" class="active">Split</button>
+        <button data-mode="preview">Preview</button>
+      </div>
+      <div class="export-menu">
+        <button class="export-btn" id="exportBtn">Export ▾</button>
+        <div class="export-panel" id="exportPanel">
+          <button id="copyMd">Copy Markdown</button>
+          <button id="copyHtml">Copy HTML</button>
+          <button id="dlMd">Download .md</button>
+          <button id="dlHtml">Download .html</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="panes" id="panes">
+      <div class="pane editor-pane" id="editorPane"><textarea id="editor" spellcheck="false" placeholder="Start writing in Markdown…"></textarea></div>
+      <div class="pane preview-pane" id="previewPane"><div id="preview"></div></div>
+    </div>
+
+    <div class="statusbar">
+      <span id="wordStats">0 words · 0 min read</span>
+      <span class="save-indicator"><span class="save-dot" id="saveDot"></span><span id="saveText">saved</span></span>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
